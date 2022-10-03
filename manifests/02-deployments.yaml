@@ -6,7 +6,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8080
+    - port: 80
+      nodePort: 32080
       targetPort: 3000
       name: "http"
   selector:
@@ -16,7 +17,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tarantool
+  name: tarantool-v1
   namespace: apps
   labels:
     version: v1
@@ -35,5 +36,31 @@ spec:
       containers:
         - image: jdkz/tarantool_reminder:v1
           name: tarantool-v1
+          ports:
+            - containerPort: 3000
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tarantool-v2
+  namespace: apps
+  labels:
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tarantool
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: tarantool
+        version: v2
+    spec:
+      containers:
+        - image: jdkz/tarantool_reminder:v1
+          name: tarantool-v2
           ports:
             - containerPort: 3000

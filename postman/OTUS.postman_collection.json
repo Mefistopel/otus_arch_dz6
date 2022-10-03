@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "15eccaa2-18c6-4b28-86d9-294dfcef9ea5",
+		"_postman_id": "2777ec41-33d1-47f1-88bb-5461e4ccc861",
 		"name": "OTUS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -55,52 +55,6 @@
 								"api",
 								"reminde",
 								"save_reminde"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "metrics",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/metrics",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"metrics"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get_reminders",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-User-Id",
-								"value": "123",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/reminde/get_reminders",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"reminde",
-								"get_reminders"
 							]
 						}
 					},
