@@ -97,7 +97,7 @@ function reminder_api.start()
     while true do
         local current_time = os.time()
         local reminders = box.sce.reminder.index.timestamp:select(current_time,{iterator = 'LE', limit = 100})
-        for _, val in pairs(reminders) dopa
+        for _, val in pairs(reminders) do
           if (val[5] + 500) >= current_time then
             send_reminde_to_chat(val[2], val[4])
             local reminde_repeat = val[6]
